@@ -1,0 +1,23 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use IEEE.numeric_std.all;
+
+entity B_RAM_2 is
+	port (
+		clk 		: in std_logic;
+		we 			: in std_logic;
+		fetch		: in std_logic;
+		addr_inst 	: in std_logic_vector (29 downto 0);
+		addr_data	: in std_logic_vector (29 downto 0);
+		data_in 	: in std_logic_vector (7 downto 0);
+
+		inst_out 	: out std_logic_vector (7 downto 0);
+		data_out 	: out std_logic_vector (7 downto 0)
+	);
+end B_RAM_2;
+
+-- 8 kB BRAM
+architecture behavioral of B_RAM_2 is
+
+	type ram_type is array (0 to 8192) of std_logic_vector(7 downto 0);
+	signal ram : ram_type := (

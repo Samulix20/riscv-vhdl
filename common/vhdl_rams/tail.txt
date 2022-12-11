@@ -1,0 +1,22 @@
+		others => (others => '0')
+	);
+
+begin
+
+	process(clk)
+	begin
+		if (rising_edge(clk)) then
+			if (fetch = '1') then
+				inst_out <= ram(to_integer(unsigned(addr_inst(12 downto 0))));
+			end if;
+
+			if (we = '1') then
+				ram(to_integer(unsigned(addr_data(12 downto 0)))) <= data_in;
+			end if;
+			
+			data_out <= ram(to_integer(unsigned(addr_data(12 downto 0))));
+		end if;
+	end process;
+
+end behavioral ; -- arch
+
