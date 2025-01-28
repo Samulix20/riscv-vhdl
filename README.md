@@ -1,12 +1,14 @@
-# riscv-vhdl
+# RiscZeto - A RISC-V processor implemented in VHDL
 
-This project is an VHDL implementation of a 5 stage RISC-V CPU with support for the RV32I Base Integer Instruction Set, M Standard Extension for Integer
-Multiplication and Division, Zicsr Control and Status Register
-(CSR) Instructions, Machine mode and User mode.
+This project is an VHDL implementation of a 5 stage RISC-V CPU with support for the RV32I Base Integer Instruction Set, M Standard Extension for Integer Multiplication and Division, Zicsr Control and Status Register (CSR) Instructions, Machine mode and User mode.
 
 This project contains an automated set of tests for the instructions and extensions implemented. It was created using unit tests from [riscv-software-src/riscv-tests](https://github.com/riscv-software-src/riscv-tests). 
 
 This project also contains a simple example program written in C with a set of utils for its compilation and simulation.
+
+## Context
+
+This project was developed as part of an academic final degree project and is intended for educational and experimental purposes.
 
 ## Software requirements
 
@@ -74,3 +76,7 @@ The ``c_src/sim.sh`` script compiles the C program using the ``c_src/Makefile``,
     $ ./sim.sh TIME_LIMIT
 
 If the script is called without the ``TIME_LIMIT`` parameter the simulation never ends.
+
+## RISC-V FreeRTOS
+
+The ``riscv-freertos`` directory includes a version of [FreeRTOS](https://www.freertos.org/) compatible with this processor.
